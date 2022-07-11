@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
-  it "is invalid if the level" do
-    expect(User.create(nickname: "Rominkg", kind: :wizard, level: 100)).to_not be_valid
+  it "is invalid if the level isn't between 1 and 99" do
+    user = build(:user, level: FFaker::Random.rand(100..9999))
+    expect(user).to_not be_valid
   end
 
   it "return the correct hero title" do
-    user = User.create(nickname: "Rominkg", kind: :ladino, level: 50)
-    expect(user.title).to eq("ladino Rominkg #50")
+    user = build(:user)
+    expect(user.title).to eq("#{user.kind} #{user.nickname} ##{user.level}")
   end
 end
