@@ -8,6 +8,6 @@ class Weapon < ApplicationRecord
     end
 
     def title
-        "#{self.nome} ##{self.level}"
+        "#{self.name} ##{self.level}"
     end
 end

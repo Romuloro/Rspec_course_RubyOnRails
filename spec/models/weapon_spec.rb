@@ -32,8 +32,10 @@ RSpec.describe Weapon, type: :model do
     end
 
     context "return the correct weapon title" do
-      
+      it "return the correct weapon title" do
+        weapon = build(:weapon)
+        expect(weapon.title).to eq("#{weapon.name} ##{weapon.level}")
+      end
     end
-    
   end
 end
