@@ -1,0 +1,19 @@
+<h1>Index</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id#</th>
+      <th>Título</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weapon.each do |weapon| %>
+      <tr>
+        <td><%= weapon.id %></td>
+        <td><%= weapon.name %></td>
+        <td> botôes </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
