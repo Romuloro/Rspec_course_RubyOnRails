@@ -53,6 +53,7 @@ group :development, :test do
   gem "rspec-rails", "~> 5.1.1"
   gem "ffaker"
   gem "factory_bot_rails"
+  gem 'capybara'
 end
 
 group :development do

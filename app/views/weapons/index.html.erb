@@ -5,6 +5,8 @@
 <div id="weapons">
   <% @weapons.each do |weapon| %>
     <%= render weapon %>
+    <p><%= weapon.title %></p>
+    <p id="current_power"> <%= weapon.current_power.to_s%></p>
     <p>
       <%= link_to "Show this weapon", weapon %>
     </p>

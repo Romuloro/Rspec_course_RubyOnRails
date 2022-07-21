@@ -5,6 +5,7 @@
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
+    <p><%= user.title %></p>
     <p>
       <%= link_to "Show this user", user %>
     </p>
