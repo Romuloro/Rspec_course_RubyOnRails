@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Weapons</h1>
+
+<div id="weapons">
+  <% @weapons.each do |weapon| %>
+    <%= render weapon %>
+    <p>
+      <%= link_to "Show this weapon", weapon %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New weapon", new_weapon_path %>
