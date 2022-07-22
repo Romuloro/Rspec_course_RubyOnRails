@@ -9,12 +9,11 @@ RSpec.describe "Weapons", type: :feature do
                 visit "/weapons/"
               end
 
-              it"the weapons's current power is present" do
+              it"the weapons's page the New Weapon link is present" do
                 expect(page).to have_link(href: '/weapons/new')
               end
 
-              it"the weapons's current power is present" do
-                
+              it"the weapons's page the Show this weapon current power is present" do
                 expect(page).to have_link(href: "/weapons/1")
               end
             end
