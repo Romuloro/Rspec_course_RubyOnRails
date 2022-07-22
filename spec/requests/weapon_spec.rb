@@ -22,6 +22,8 @@ RSpec.describe "Weapons", type: :request do
         expect(response.body).to include(weapon.current_power.to_s)
       end
     end
+    
+  
 
   end
 
@@ -34,8 +36,17 @@ RSpec.describe "Weapons", type: :request do
 
   describe "GET /show" do
     it "returns http success" do
-      get weapons_path
+      weapon = weapon = build(:weapon)
+      get "/weapons/", params: {id:weapon.id}
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "delete route" do
+    it "returns http success" do
+      weapon = create(:weapon)
+      delete "/weapons/#{weapon.id}"
+      expect(response).to have_http_status(:redirect)
     end
   end
 end
