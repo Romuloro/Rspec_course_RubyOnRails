@@ -1,0 +1,9 @@
+class Enemy < ApplicationRecord
+    enum kind: [ :globin, :orc, :demon, :fary, :dragon ]
+    validates :level, numericality: { greater_than: 0, less_than_or_equal_to:99 }
+    validates_presente_of :name, :power_base, :power_step, :level, :kind
+
+    def current_power
+        power = self.power_base + (self.level - 1) * self.power_step
+    end
+end
